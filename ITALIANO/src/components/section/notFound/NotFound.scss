@@ -1,0 +1,36 @@
+// Define your custom variables and mixins here
+$regular: 'Open Sans', Arial, sans-serif;
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+.error {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-color: gray;
+  background-position: center;
+  position: relative;
+  background-size: length(100%);
+ 
+
+  &__container {
+    background-color: rgba(180, 222, 255, 0.849);
+    position: absolute;
+    padding: 4em;
+    left: 20%;
+    top: 35%;
+    @include desktop {
+      padding: 4em;
+      left: 38%;
+      top: 35%;
+    }
+    &__message {
+      font-size: 1.6em;
+      font-family: $regular;
+      color: rgb(28, 28, 57);
+    }
+  }
+}
